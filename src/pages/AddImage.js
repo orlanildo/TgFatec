@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Alert, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, Image, TextInput } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
 
@@ -9,38 +9,39 @@ import styles from './styles/styleAddImage'
 export default function AddImage() {
     const navigation = useNavigation()
 
-    let [selectedImage, setSelectedImage] = React.useState(null);
+    let [selectedImage, setSelectedImage] = useState();
 
     let openImagePickerAsync = async () => {
-      let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
-  
-      if (permissionResult.granted === false) {
-        alert('Permission to access camera roll is required!');
-        return;
+      if(await ImagePicker.requestCameraRollPermissionsAsync() === false){
+          alert("Permission to access camera roll is required!")
+          return;
       }
   
       let pickerResult = await ImagePicker.launchImageLibraryAsync();
       if (pickerResult.cancelled === true) {
         return;
       }
-  
-      setSelectedImage({ localUri: pickerResult.uri });
+
+      setSelectedImage( selectedImage = pickerResult.uri )
     };
-  
-    if (selectedImage !== null) {
-      return (
-        <View style={styles.container}>
-          <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-        </View>
-      );
-    }
     
     return(
         <View style={styles.container}>
-            <Text>AddImage</Text>
+            <Text style={styles.title} >AddImage</Text>
+
+            <View style={styles.imageContainer}>
+                <Image style={styles.image} source={{ uri: selectedImage }} />
+            </View>
+
+            <TextInput placeholder='Adicione um comentário para essa foto ?' 
+                onChangeText={() => {}} style={styles.input} />
 
             <TouchableOpacity style={styles.btnSubmit} onPress={openImagePickerAsync} >
                 <Text style={styles.textSubmit}>Pick a photo</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnSubmit} onPress={() => {}} >
+                <Text style={styles.buttomText}>Salvar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
 
 export default StyleSheet.create({
@@ -12,6 +12,21 @@ export default StyleSheet.create({
         width: 300,
         height: 300,
         resizeMode: 'contain',
-      },
-      
+    },
+    title: {
+
+    },
+
+    imageContainer: {
+        width: '90%',
+        height: Dimensions.get('window').width / 2,
+        backgroundColor: '#eee',
+        marginTop: 10,
+    },
+    image: {
+        width: '100%',
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').width / 2,
+        resizeMode: 'center',
+    },
 })
