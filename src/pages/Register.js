@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import styles from './styles/cssRegister'
+import styles from './styles/styleRegister'
 
 
 export default function Register() {
@@ -20,7 +20,7 @@ export default function Register() {
                 <TextInput style={styles.input} placeholder='********' autoCorrect={false}
                     onChangeText={() => {}} />
 
-                <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Login')} >
+                <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >
                     <Text style={styles.textSubmit}>Access</Text>
                 </TouchableOpacity>
 

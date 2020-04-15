@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, TextInput, Image, KeyboardAvoidingView, Animated } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import styles from './styles/cssLogin'
+import styles from './styles/styleLogin'
 import logoMidium from '../../assets/logoMidium.png'
 
 
