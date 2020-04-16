@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 
-import styles from './styles/styleHome'
+import styles from './styles/styleMenu'
 
 
-export default function Home({ navigation }) {
+export default function Menu({ navigation }) {
     
     return(
         <View style={styles.container}>
-            <Text>Home</Text>
+            <Text>Menu</Text>
 
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('AddImage')} >
                 <Text style={styles.textSubmit}>AddImage</Text>

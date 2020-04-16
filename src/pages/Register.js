@@ -1,13 +1,10 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles/styleRegister'
 
 
-export default function Register() {
-
-    const navigation = useNavigation()
+export default function Register({ navigation }) {
 
     return(
         <View style={styles.container}>

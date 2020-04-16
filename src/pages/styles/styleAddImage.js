@@ -16,7 +16,6 @@ export default StyleSheet.create({
     title: {
 
     },
-
     imageContainer: {
         width: '90%',
         height: Dimensions.get('window').width / 2,

@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Alert, Image, TextInput } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
 
 import styles from './styles/styleAddImage'
 
 
-export default function AddImage() {
-    const navigation = useNavigation()
-
+export default function AddImage({ navigation }) {
     let [selectedImage, setSelectedImage] = useState();
 
     let openImagePickerAsync = async () => {

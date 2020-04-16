@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, TextInput, Image, KeyboardAvoidingView, Animated } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles/styleLogin'
 import logoMidium from '../../assets/logoMidium.png'
 
 
-export default function Login() {
-    const navigation = useNavigation()
+export default function Login({ navigation }) {
 
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }))
     const [opacity] = useState(new Animated.Value(0))
@@ -43,7 +41,7 @@ export default function Login() {
                 <TextInput style={styles.input} placeholder='********' autoCorrect={false}
                     onChangeText={() => {}} />
 
-                <TouchableOpacity style={styles.btnSubmit} >
+                <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >
                     <Text style={styles.textSubmit} >Enter</Text>
                 </TouchableOpacity>
 
