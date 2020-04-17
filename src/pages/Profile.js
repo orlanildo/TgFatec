@@ -3,17 +3,30 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
 import { AntDesign } from '@expo/vector-icons'
 
+//import { useNavigation, DrawerActions } from '@react-navigation/native'
+
 import styles from './styles/styleProfile'
 
+//import Menu from './Menu'
 
-export default function Profile({ navigation }) {
 
+export default function Profile(navigation) {
     const options = { email: 'teste@hotmail.com', secure: true }
+
+    //const navigation = useNavigation()
+
+    function open(){
+        //console.log('Menu: ', Menu)
+        //console.log('teste open: ', navigation.navigate('Drawer'))
+        //console.log('DraerActions: ', DrawerActions)
+        console.log('open')
+    }
+
 
     return(
         <View style={styles.container}>
             <View style={styles.toggleMenu} >
-                <TouchableOpacity onPress={() => navigation.navigate('Menu') }>
+                <TouchableOpacity onPress={ open }>
                     <AntDesign name="menu-fold" size={45} color="#5CFF57" />
                 </TouchableOpacity>
             </View>

@@ -1,22 +1,23 @@
-import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+// import { NavigationContainer } from '@react-navigation/native'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import styles from './styles/styleMenu'
+import Login from './Login'
+import Register from './Register'
+import Home from './Home'
+import Profile from './Profile'
+import AddImage from './AddImage'
 
 
-export default function Menu({ navigation }) {
-    
-    return(
-        <View style={styles.container}>
-            <Text>Menu</Text>
-
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('AddImage')} >
-                <Text style={styles.textSubmit}>AddImage</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Profile')} >
-                <Text style={styles.textSubmit}>Profile</Text>
-            </TouchableOpacity>
-        </View>
+const Drawer = createDrawerNavigator()
+export default function DrawerMenu() {
+    return (
+        // <NavigationContainer>
+        <Drawer.Navigator>
+            <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="Profile" component={Profile} />
+            <Drawer.Screen name="AddImage" component={AddImage} />
+        </Drawer.Navigator>
+        // </NavigationContainer>
     )
 }
+
