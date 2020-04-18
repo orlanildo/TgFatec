@@ -6,43 +6,27 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        justifyContent: 'space-around',
     },
-    toggleMenu: {
-        marginTop: 40,
-        marginLeft: 20,
-        marginBottom: -170,
+    containerHeader: {
         flexDirection: 'row',
-        alignSelf: 'flex-start',
+        width: '100%',
+        marginTop: -35,
+        backgroundColor: '#5CFF57',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
     },
-    containerProfile: {
-        flex: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    containerMap: {
-        flex: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#eee',
+    btnSubmit: {
+        backgroundColor: '#35aaff',
+        height: 45,
         width: '90%',
+        borderRadius: 7,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    addFurniture: {
-        flexDirection: 'row',
-        alignSelf: 'flex-end',
+    textSubmit: {
+        color: '#fff',
+        fontSize: 18,
     },
-    avatar: {
-        width: 150,
-        height: 150,
-        borderRadius: 75,
-        marginTop: 100,
-    },
-    nickname: {
-        marginTop: 10,
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-    email: {
-        marginTop: 20,
-        fontSize: 25,
-    },
+
 })

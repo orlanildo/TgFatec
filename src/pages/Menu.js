@@ -1,23 +1,29 @@
-// import { NavigationContainer } from '@react-navigation/native'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-
-import Login from './Login'
-import Register from './Register'
-import Home from './Home'
-import Profile from './Profile'
-import AddImage from './AddImage'
+import React from 'react'
+import { Text, View, TouchableOpacity } from 'react-native'
 
 
-const Drawer = createDrawerNavigator()
-export default function DrawerMenu() {
-    return (
-        // <NavigationContainer>
-        <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={Home} />
-            <Drawer.Screen name="Profile" component={Profile} />
-            <Drawer.Screen name="AddImage" component={AddImage} />
-        </Drawer.Navigator>
-        // </NavigationContainer>
-    )
+import styles from './styles/styleMenu'
+
+export default function DrawerContent() {
+
+	return (
+		<View >
+			<TouchableOpacity style={[styles.btnSubmit, { marginTop: 80 }]} onPress={() => {}} >
+				<Text style={styles.textSubmit}>AddImage</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.btnSubmit} onPress={() => {}} >
+				<Text style={styles.textSubmit}>Profile</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.btnSubmit} onPress={() => {}} >
+				<Text style={styles.textSubmit}>Logout</Text>
+			</TouchableOpacity>
+		</View>
+	)
 }
+
+
+
+
 

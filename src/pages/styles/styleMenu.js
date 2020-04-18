@@ -8,18 +8,11 @@ export default StyleSheet.create({
         justifyContent: 'center',
         
     },
-
     btnSubmit: {
-        marginTop: 20,
-        backgroundColor: '#35aaff',
-        height: 45,
-        width: '90%',
-        borderRadius: 7,
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginLeft: 25,
+        marginTop: 40,
     },
     textSubmit: {
-        color: '#fff',
         fontSize: 18,
     },
 

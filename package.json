@@ -10,6 +10,7 @@
   "dependencies": {
     "@engrjabi/react-intl.macro": "^0.3.7",
     "@react-native-community/masked-view": "0.1.6",
+    "@react-navigation/bottom-tabs": "^5.2.6",
     "@react-navigation/drawer": "^5.4.1",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
