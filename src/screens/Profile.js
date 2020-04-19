@@ -18,6 +18,10 @@ export default function Profile({ navigation }) {
 
             <Text>Profile</Text>
 
+            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('FormAddress')} >
+                <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('AddImage')} >
                 <Text style={styles.textSubmit}>AddImage</Text>
             </TouchableOpacity>
