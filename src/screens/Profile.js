@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ScrollView, Animated } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 
 import styles from './styles/styleProfile'
+import FormAddress from './FormAddress'
 
 
 export default function Profile({ navigation }) {
@@ -21,6 +22,10 @@ export default function Profile({ navigation }) {
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('FormAddress')} >
                 <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
             </TouchableOpacity>
+            <ScrollView>
+            <Animated.View >
+                <FormAddress />
+            </Animated.View>
 
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('AddImage')} >
                 <Text style={styles.textSubmit}>AddImage</Text>
@@ -33,6 +38,7 @@ export default function Profile({ navigation }) {
             <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Login')} >
                 <Text style={styles.textSubmit}>Logout</Text>
             </TouchableOpacity>
+            </ScrollView>
         </View>
     )
 }

@@ -10,7 +10,7 @@ export default function FormAddress({ navigation }) {
     const [selectedCity, setselectedCity] = useState("Carapicuíba");
 
     function testeData() {
-        console.log('\nDados: ', DATA)
+        console.log('\nDados: ')
     }
 
     return (
@@ -46,19 +46,12 @@ export default function FormAddress({ navigation }) {
                     onChangeText={() => { }} />
             </View>
 
-            <TextInput style={[styles.input, { height: 150}]} placeholder='Observações:' autoCorrect={false}
+            <TextInput style={styles.textArea} multiline={true} numberOfLines={8}
+                placeholder='Observações:' autoCorrect={false}
                 onChangeText={() => { }} />
 
             <TouchableOpacity style={[styles.btnSubmit, { margin: 10 }]} onPress={testeData} >
                 <Text style={styles.textSubmit}>Test</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >
-                <Text style={styles.textSubmit}>Salvar</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={{ marginTop: 10 }}>
-                <Text style={styles.textLogin} onPress={() => navigation.navigate('Login')} >Cancelar</Text>
             </TouchableOpacity>
         </View>
     )

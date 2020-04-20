@@ -13,6 +13,14 @@ export default StyleSheet.create({
         borderRadius: 7,
         marginBottom: 10,
     },
+    textArea: {
+        backgroundColor: '#fff',
+        width: '90%',
+        marginBottom: 15,
+        fontSize: 18,
+        borderRadius: 7,
+        paddingLeft: 7,
+    },
     piker: {
         backgroundColor: '#fff',
         height: 50,

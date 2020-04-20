@@ -29,6 +29,29 @@ export default StyleSheet.create({
         height: 80,
         borderRadius: 75,
     },
+    avatarMap: {
+        width: 40,
+        height: 40,
+        borderRadius: 30,
+    },
+    callout: {
+        width: 260,
+        borderRadius: 7,
+    },
+    name: {
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    desc: {
+        color: '#666',
+        marginTop: 3,
+        fontSize: 12,
+    },
+    furniture: {
+        fontWeight: 'bold',
+        marginTop: 3,
+        fontSize: 12,
+    },
     containerMap: {
         flex: 2,
         backgroundColor: '#eee',
