@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { View, Text, TouchableOpacity, Image, Alert } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
 import { AntDesign } from '@expo/vector-icons'
@@ -6,38 +6,40 @@ import MapView, { Marker, Callout } from 'react-native-maps'
 import * as Location from 'expo-location'
 
 import styles from './styles/styleHome'
-import { set } from 'react-native-reanimated'
 
 export default function Home({ navigation }) {
     const [currentRegion, setCurrentRegion] = useState(null)
-    const [latElon, setLatElon] = useState(null)
+    const [lat, setLat] = useState(null)
+    const [lon, setLon] = useState(null)
     const options = { email: 'teste@hotmail.com', secure: true }
 
-    const getLocale = async () => {
-        let { status } = await Location.requestPermissionsAsync();
-        if (status !== 'granted') {
-          Alert.alert('Permission to access location was denied');
-        }
-  
-        let location = await Location.getLastKnownPositionAsync({})
 
-        regionFrom(location)
-    }
+    useLayoutEffect(() => {
+        (async () => {
+            const { status } = await Location.requestPermissionsAsync()
+            if (status !== 'granted') {
+                Alert.alert('Permission to access location was denied');
+            }
 
-    function regionFrom(location) {
-        let lat = location.coords.latitude
-        let lon = location.coords.latitude
+            const { coords } = await Location.getCurrentPositionAsync({})
 
+            setLat(coords.latitude)
+            setLon(coords.longitude)
+        })()
+    })
+
+    /*
+    function regionFrom(lat, lon, distance) {
         distance = distance / 2
         const circumference = 40075
         const oneDegreeOfLatitudeInMeters = 111.32 * 1000
         const angularDistance = distance / circumference
-
+    
         const latitudeDelta = distance / oneDegreeOfLatitudeInMeters
         const longitudeDelta = Math.abs(Math.atan2(
             Math.sin(angularDistance) * Math.cos(lat),
             Math.cos(angularDistance) - Math.sin(lat) * Math.sin(lat)))
-
+    
         return result = {
             latitude: lat,
             longitude: lon,
@@ -45,7 +47,7 @@ export default function Home({ navigation }) {
             longitudeDelta,
         }
     }
-
+    */
 
     return (
         <View style={styles.container}>
@@ -68,12 +70,15 @@ export default function Home({ navigation }) {
 
             <View style={styles.containerMap} >
                 <MapView initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
+                    latitude: lat,
+                    longitude: lon,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }} style={{ flex: 1 }} >
-                    <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} >
+                    <Marker coordinate={{ latitude: -23.520957, longitude: -46.8133429 }} >
+
+                        <Text >{lat}</Text>
+                        <Text style={{ marginBottom: 10 }} >{lon}</Text>
                         <Gravatar options={options} style={styles.avatarMap} />
 
                         <Callout onPress={() => navigation.navigate('Profile')}>
@@ -87,7 +92,7 @@ export default function Home({ navigation }) {
                 </MapView>
 
                 <View style={styles.addFurniture} >
-                    <TouchableOpacity onPress={() => {}} >
+                    <TouchableOpacity onPress={() => { }} >
                         <AntDesign name="pluscircle" size={50} color="#5CFF57" />
                     </TouchableOpacity>
                 </View>
