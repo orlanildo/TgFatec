@@ -16,10 +16,13 @@ export default StyleSheet.create({
     textArea: {
         backgroundColor: '#fff',
         width: '90%',
+        height: 100,
         marginBottom: 15,
         fontSize: 18,
         borderRadius: 7,
         paddingLeft: 7,
+        paddingTop: 7,
+        textAlignVertical: 'top',
     },
     piker: {
         backgroundColor: '#fff',

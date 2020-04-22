@@ -27,15 +27,15 @@ export default function Profile({ navigation }) {
                 <FormAddress />
             </Animated.View>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('AddImage')} >
+            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 5}]} onPress={() => navigation.navigate('AddImage')} >
                 <Text style={styles.textSubmit}>AddImage</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >
+            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 10}]} onPress={() => navigation.navigate('Home')} >
                 <Text style={styles.textSubmit}>Home</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Login')} >
+            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 10}]} onPress={() => navigation.navigate('Login')} >
                 <Text style={styles.textSubmit}>Logout</Text>
             </TouchableOpacity>
             </ScrollView>

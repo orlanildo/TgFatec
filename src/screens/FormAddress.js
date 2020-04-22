@@ -46,7 +46,7 @@ export default function FormAddress({ navigation }) {
                     onChangeText={() => { }} />
             </View>
 
-            <TextInput style={styles.textArea} multiline={true} numberOfLines={8}
+            <TextInput style={styles.textArea} multiline={true}
                 placeholder='Observações:' autoCorrect={false}
                 onChangeText={() => { }} />
 

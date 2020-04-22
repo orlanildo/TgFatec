@@ -62,6 +62,9 @@ export default StyleSheet.create({
         position: 'absolute',
         flexDirection: 'row',
         alignSelf: 'flex-end',
+        right: 5,
+        bottom: 5,
+        zIndex: 9,
     },
     nickname: {
         fontSize: 20,
