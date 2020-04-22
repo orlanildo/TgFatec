@@ -21,31 +21,12 @@ export default StyleSheet.create({
         height: 100,
         justifyContent: 'space-around',
         alignItems: 'center',
-
     },
     avatar: {
         marginLeft: -90,
         width: 80,
         height: 80,
         borderRadius: 75,
-    },
-    avatarMap: {
-        width: 40,
-        height: 40,
-        borderRadius: 30,
-    },
-    callout: {
-        width: 260,
-        borderRadius: 7,
-    },
-    name: {
-        fontWeight: 'bold',
-        fontSize: 16,
-    },
-    desc: {
-        color: '#666',
-        marginTop: 3,
-        fontSize: 12,
     },
     furniture: {
         fontWeight: 'bold',
@@ -54,7 +35,6 @@ export default StyleSheet.create({
     },
     containerMap: {
         flex: 2,
-        backgroundColor: '#eee',
         width: '90%',
         height: 400,
     },

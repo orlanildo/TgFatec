@@ -4,6 +4,8 @@ import { Gravatar } from 'react-native-gravatar'
 import MapView, { Marker, Callout } from 'react-native-maps'
 import * as Location from 'expo-location'
 
+import ContentLoader, { Rect, Circle } from 'react-content-loader/native'
+
 import styles from './stylesComponents/styleMap'
 
 
@@ -30,22 +32,26 @@ export default function Map({ navigation }) {
 
             const { coords } = await Location.getCurrentPositionAsync({})
 
-            console.log("\ecoords: ", coords)
-
             setCurrentRegion({
                 latitude: coords.latitude,
                 longitude: coords.longitude,
                 latitudeDelta: 0.1,
                 longitudeDelta: 0.1
             })
-            console.log("\ncurrentRegion: ", currentRegion)
         })()
     }
+
 
     return (
         <>
             {currentRegion == null ? (
-                <Text style={{ alignSelf: 'center' }}>Carregando...</Text>
+                <>
+                <ContentLoader speed={0.5} width={350} height={500} viewBox="0 0 350 500"
+                backgroundColor="#eaeced" foregroundColor="#ffffff"  >
+                    <Rect x="0" y="0" rx="2" ry="2" width="350" height="500" />
+                </ContentLoader>
+                <Text style={styles.textLoadingMap}>carregando...</Text>
+                </>
                 ) : (
                 <MapView initialRegion={currentRegion} style={{ flex: 1 }} >
                     <Marker coordinate={{ latitude: currentRegion.latitude, longitude: currentRegion.longitude }} >
