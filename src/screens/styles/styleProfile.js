@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native'
-import { Component } from 'react'
 
 
 export default StyleSheet.create({
@@ -10,18 +9,11 @@ export default StyleSheet.create({
         justifyContent: 'space-around',
     },
     containerToggleFormAddress: {
-        position: 'absolute'
-    },
-    containerHeader: {
-        flexDirection: 'row',
-        width: '100%',
-        marginTop: -35,
-        backgroundColor: '#5CFF57',
-        justifyContent: 'flex-end',
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     containerBtn:{
-
+        marginTop: 20,
     },
     btnSubmit: {
         backgroundColor: '#35aaff',

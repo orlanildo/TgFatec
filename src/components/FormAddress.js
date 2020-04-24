@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, TextInput, Picker } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, Picker, Animated } from 'react-native'
 
 import styles from './stylesComponents/styleFormAddress'
 
 
-export default function FormAddress({ navigation }) {
+export default function FormAddress({ navigation}) {
 
-    const [selectedState, setselectedState] = useState("SP");
-    const [selectedCity, setselectedCity] = useState("Carapicuíba");
+    const [selectedState, setselectedState] = useState("SP")
+    const [selectedCity, setselectedCity] = useState("Carapicuíba")
 
     function testeData() {
         console.log('\nDados: ')
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} >
             <View style={styles.containerPiker}>
                 <Picker selectedValue={selectedState} style={[styles.piker, { width: '20%' }]}
                     onValueChange={(itemValue, itemIndex) => setselectedState(itemValue)} >
@@ -50,7 +50,7 @@ export default function FormAddress({ navigation }) {
                 placeholder='Observações:' autoCorrect={false}
                 onChangeText={() => { }} />
 
-            <TouchableOpacity style={[styles.btnSubmit, { margin: 10 }]} onPress={testeData} >
+            <TouchableOpacity style={styles.btnSubmit} onPress={testeData} >
                 <Text style={styles.textSubmit}>Salvar</Text>
             </TouchableOpacity>
         </View>

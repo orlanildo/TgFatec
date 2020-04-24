@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Animated } from 'react-native'
 
 import styles from './styles/styleProfile'
@@ -6,25 +6,52 @@ import FormAddress from '../components/FormAddress'
 
 
 export default function Profile({ navigation }) {
-    const [heightForm, setHeightForm] = useState(new Animated.Value(1))
-    const [widthForm, setWidthForm] = useState(new Animated.Value(80))
+    //const [start, setStart] = useState(false)
+    const [finishLoadingForm, setFinishLoadingForm] = useState(false)
+    const [toggleForm, setToggleForm] = useState(false)
+    const [heightForm, setHeightForm] = useState(new Animated.Value(2))
+    const [widthForm, setWidthForm] = useState(new Animated.Value(100))
 
-    function toggleFormAddress() {
-        Animated.sequence([
-            Animated.timing( widthForm, { toValue: 365, duration: 1000 } ),
-            Animated.timing( heightForm, { toValue: 450, duration: 1000 } )
-        ]).start()
+    function opemFrom() {
+        if (!toggleForm) {
+            console.log('if toggleForm: ', toggleForm)
+            Animated.sequence([
+                Animated.timing(widthForm, { toValue: 365, duration: 400 }),
+                Animated.timing(heightForm, { toValue: 360, duration: 500 })
+            ]).start()
+            setTimeout(() => {
+                setFinishLoadingForm(true)
+            }, 600)
+
+            console.log('if finishLoadingForm: ', finishLoadingForm)
+
+        } else {
+            console.log('\nelse toggleForm: ', toggleForm)
+            setFinishLoadingForm(false)
+            console.log('else finishLoadingForm: ', finishLoadingForm)
+
+            Animated.sequence([
+                Animated.timing(heightForm, { toValue: 2, duration: 300 }),
+                Animated.timing(widthForm, { toValue: 100, duration: 300 })
+            ]).start()
+        }
+        setToggleForm(!toggleForm)
     }
 
     return (
         <View style={styles.container}>
             <View style={styles.containerToggleFormAddress}>
-                <TouchableOpacity style={styles.btnSubmit} onPress={toggleFormAddress} >
+
+                <TouchableOpacity style={styles.btnSubmit} onPress={opemFrom} >
                     <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
                 </TouchableOpacity>
-
-                <Animated.View style={{ backgroundColor: '#5CFF57', width: widthForm, height: heightForm }} >
-                    {/* <FormAddress /> */}
+                <Animated.View style={{ width: widthForm, 
+                    height: heightForm, backgroundColor: '#5CFF57', marginTop: 5 }}>
+                    {finishLoadingForm ? (
+                        <FormAddress />
+                        ) : (
+                        null
+                    )}
                 </Animated.View>
             </View>
 
