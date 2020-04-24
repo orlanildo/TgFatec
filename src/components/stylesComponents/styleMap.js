@@ -35,4 +35,12 @@ export default StyleSheet.create({
     email: {
         fontSize: 15,
     },
+    loadButton: {
+        zIndex: 9,
+        position: 'absolute',
+        right: 10,
+        bottom: 65,
+        borderRadius: 20,
+        backgroundColor: 'rgba(0, 0, 0, 0.01)',
+    }
 })

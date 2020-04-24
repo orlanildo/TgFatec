@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Alert, Image, TextInput } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
-import { AntDesign } from '@expo/vector-icons'
 
 import styles from './styles/styleAddImage'
 
@@ -24,13 +23,6 @@ export default function AddImage({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.containerHeader} >
-                <Image source={require('../../assets/logoSmall.png')} />
-                <TouchableOpacity style={{ marginRight: 10 }} onPress={() => navigation.openDrawer()}>
-                    <AntDesign name="menu-fold" size={45} color="black" />
-                </TouchableOpacity>
-            </View>
-
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={{ uri: selectedImage }} />
             </View>

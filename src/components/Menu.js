@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 
-import styles from './styles/styleMenu'
+import styles from './stylesComponents/styleMenu'
 
 
 export default function DrawerContent({ navigation }) {

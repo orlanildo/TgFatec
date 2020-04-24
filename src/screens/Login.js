@@ -6,7 +6,6 @@ import logoMidium from '../../assets/logoMidium.png'
 
 
 export default function Login({ navigation }) {
-
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }))
     const [opacity] = useState(new Animated.Value(0))
 
@@ -14,7 +13,7 @@ export default function Login({ navigation }) {
         Animated.parallel([
             Animated.spring(offset.y, {
                 toValue: 0,
-                speed: 4,
+                speed: 3,
                 bounciness: 20
             }),
             Animated.timing(opacity, {

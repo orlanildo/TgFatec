@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Component } from 'react'
 
 
 export default StyleSheet.create({
@@ -8,6 +9,9 @@ export default StyleSheet.create({
         justifyContent: 'center',
         justifyContent: 'space-around',
     },
+    containerToggleFormAddress: {
+        position: 'absolute'
+    },
     containerHeader: {
         flexDirection: 'row',
         width: '100%',
@@ -16,10 +20,13 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center'
     },
+    containerBtn:{
+
+    },
     btnSubmit: {
         backgroundColor: '#35aaff',
         height: 45,
-        width: '90%',
+        width: 370,
         borderRadius: 7,
         alignItems: 'center',
         justifyContent: 'center',

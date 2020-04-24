@@ -1,29 +1,27 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createStackNavigator, HeaderBackground } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
-import { Ionicons } from '@expo/vector-icons'
-
-const AuthContext = React.createContext();
 
 import Login from './screens/Login'
 import Register from './screens/Register'
 import Home from './screens/Home'
 import Profile from './screens/Profile'
 import AddImage from './screens/AddImage'
-import FormAddress from './screens/FormAddress'
+import FormAddress from './components/FormAddress'
 
-import DrawerContent from './screens/Menu'
+import DrawerContent from './components/Menu'
+import Header from './components/Header'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 const Tab = createBottomTabNavigator()
 
+const AuthContext = React.createContext();
 const logado = false
 
-function AuthScree () {
+function AuthScree() {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }} >
 			<Stack.Screen name="Login" component={Login} />
@@ -43,7 +41,7 @@ function TabScreen() {
 
 function StackScree() {
 	return (
-		<Stack.Navigator screenOptions={{ headerShown: false }} >
+		<Stack.Navigator screenOptions={{ header:() => <Header /> }} >
 			<Stack.Screen name="AuthScree" component={AuthScree} />
 
 			<Stack.Screen name="Home" component={Home} />
@@ -60,8 +58,8 @@ function DrawerScree() {
 			{logado ? (
 				<Drawer.Screen name="AuthScree" component={AuthScree} />
 			) : (
-				<Drawer.Screen name="StackScree" component={StackScree} />
-			)}
+					<Drawer.Screen name="StackScree" component={StackScree} />
+				)}
 		</Drawer.Navigator>
 	)
 }

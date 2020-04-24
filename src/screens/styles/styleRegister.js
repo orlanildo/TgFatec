@@ -6,7 +6,13 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
+    titleScreen: {
+        marginTop: -80,
+        color: '#35aaff',
+        fontSize: 18,
+        marginBottom: 10,
+        marginLeft: -260,
+    },
     input: {
         backgroundColor: '#fff',
         width: '90%',
@@ -16,15 +22,6 @@ export default StyleSheet.create({
         paddingLeft: 7,
         height: 45,
     },
-
-    titleScreen: {
-        marginTop: -80,
-        color: '#35aaff',
-        fontSize: 18,
-        marginBottom: 10,
-        marginLeft: -260,
-    },
-
     btnSubmit: {
         backgroundColor: '#35aaff',
         height: 45,
@@ -41,6 +38,4 @@ export default StyleSheet.create({
         color: '#35aaff',
         fontSize: 18,
     },
-    
-
 })

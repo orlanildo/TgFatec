@@ -6,18 +6,12 @@ import { AntDesign } from '@expo/vector-icons'
 import styles from './styles/styleHome'
 import Map from '../components/Map'
 
+
 export default function Home({ navigation }) {
     const options = { email: 'teste@hotmail.com', secure: true }
 
     return (
         <View style={styles.container}>
-            <View style={styles.containerHeader} >
-                <Image source={require('../../assets/logoSmall.png')} />
-                <TouchableOpacity style={{ marginRight: 10 }} onPress={() => navigation.openDrawer()}>
-                    <AntDesign name="menu-fold" size={45} color="black" />
-                </TouchableOpacity>
-            </View>
-
             <View style={styles.containerAvatar}>
                 <Gravatar options={options} style={styles.avatar} />
                 <View style={{ marginLeft: -200 }}>

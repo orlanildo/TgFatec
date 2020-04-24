@@ -7,14 +7,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    containerHeader: {
-        flexDirection: 'row',
-        width: '100%',
-        marginTop: 30,
-        backgroundColor: '#5CFF57',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
     containerAvatar: {
         flexDirection: 'row',
         width: '100%',

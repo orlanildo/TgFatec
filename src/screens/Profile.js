@@ -1,44 +1,44 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, Image, ScrollView, Animated } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, ScrollView, Animated } from 'react-native'
 
 import styles from './styles/styleProfile'
-import FormAddress from './FormAddress'
+import FormAddress from '../components/FormAddress'
 
 
 export default function Profile({ navigation }) {
+    const [heightForm, setHeightForm] = useState(new Animated.Value(1))
+    const [widthForm, setWidthForm] = useState(new Animated.Value(80))
+
+    function toggleFormAddress() {
+        Animated.sequence([
+            Animated.timing( widthForm, { toValue: 365, duration: 1000 } ),
+            Animated.timing( heightForm, { toValue: 450, duration: 1000 } )
+        ]).start()
+    }
 
     return (
         <View style={styles.container}>
-            <View style={styles.containerHeader} >
-                    <Image source={require('../../assets/logoSmall.png')} />
-                <TouchableOpacity style={{ marginRight: 10 }} onPress={() => navigation.openDrawer()}>
-                    <AntDesign name="menu-fold" size={45} color="black" />
+            <View style={styles.containerToggleFormAddress}>
+                <TouchableOpacity style={styles.btnSubmit} onPress={toggleFormAddress} >
+                    <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
                 </TouchableOpacity>
+
+                <Animated.View style={{ backgroundColor: '#5CFF57', width: widthForm, height: heightForm }} >
+                    {/* <FormAddress /> */}
+                </Animated.View>
             </View>
 
-            <Text>Profile</Text>
+            <View style={styles.containerBtn}>
+                <TouchableOpacity style={styles.btnSubmit}
+                    onPress={() => navigation.navigate('AddImage')} >
+                    <Text style={styles.textSubmit}>AddImage</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('FormAddress')} >
-                <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
-            </TouchableOpacity>
-            <ScrollView>
-            <Animated.View >
-                <FormAddress />
-            </Animated.View>
-
-            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 5}]} onPress={() => navigation.navigate('AddImage')} >
-                <Text style={styles.textSubmit}>AddImage</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 10}]} onPress={() => navigation.navigate('Home')} >
-                <Text style={styles.textSubmit}>Home</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={[styles.btnSubmit, {marginLeft: 20, marginTop: 10}]} onPress={() => navigation.navigate('Login')} >
-                <Text style={styles.textSubmit}>Logout</Text>
-            </TouchableOpacity>
-            </ScrollView>
+                <TouchableOpacity style={[styles.btnSubmit, { marginTop: 10 }]}
+                    onPress={() => navigation.navigate('Login')} >
+                    <Text style={styles.textSubmit}>Logout</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, TextInput, Picker } from 'react-native'
 
-import styles from './styles/styleFormAddress'
+import styles from './stylesComponents/styleFormAddress'
 
 
 export default function FormAddress({ navigation }) {
@@ -15,10 +15,8 @@ export default function FormAddress({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.titleScreen}>FormAddress</Text>
-
             <View style={styles.containerPiker}>
-                <Picker selectedValue={selectedState} style={styles.piker}
+                <Picker selectedValue={selectedState} style={[styles.piker, { width: '20%' }]}
                     onValueChange={(itemValue, itemIndex) => setselectedState(itemValue)} >
                     <Picker.Item label="SP" value="SP" />
                     <Picker.Item label="RJ" value="RJ" />
@@ -26,7 +24,7 @@ export default function FormAddress({ navigation }) {
                     <Picker.Item label="MG" value="MG" />
                     <Picker.Item label="DF" value="DF" />
                 </Picker>
-                <Picker selectedValue={selectedCity} style={styles.piker}
+                <Picker selectedValue={selectedCity} style={[styles.piker, { width: '77%' }]}
                     onValueChange={(itemValue, itemIndex) => setselectedCity(itemValue)} >
                     <Picker.Item label="Carapicuíba" value="Carapicuíba" />
                     <Picker.Item label="Osasco" value="Osasco" />
@@ -40,9 +38,11 @@ export default function FormAddress({ navigation }) {
                 onChangeText={() => { }} />
 
             <View style={{ flexDirection: 'row' }}>
-                <TextInput style={[styles.input, { marginRight: 4, width: '19%' }]} placeholder='Nº' autoCorrect={false}
+                <TextInput style={[styles.input, { marginRight: 4, width: '19%' }]} 
+                    placeholder='Nº' autoCorrect={false}
                     onChangeText={() => { }} />
-                <TextInput style={[styles.input, { marginLeft: 4, width: '69%' }]} placeholder='Rua:' autoCorrect={false}
+                <TextInput style={[styles.input, { marginLeft: 4, width: '69%' }]} 
+                    placeholder='Rua:' autoCorrect={false}
                     onChangeText={() => { }} />
             </View>
 
@@ -51,7 +51,7 @@ export default function FormAddress({ navigation }) {
                 onChangeText={() => { }} />
 
             <TouchableOpacity style={[styles.btnSubmit, { margin: 10 }]} onPress={testeData} >
-                <Text style={styles.textSubmit}>Test</Text>
+                <Text style={styles.textSubmit}>Salvar</Text>
             </TouchableOpacity>
         </View>
     )
