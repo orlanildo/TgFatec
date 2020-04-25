@@ -5,29 +5,11 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        justifyContent: 'space-around',
-    },
-    containerHeader: {
-        flexDirection: 'row',
-        width: '100%',
-        backgroundColor: '#5CFF57',
-        justifyContent: 'flex-end',
-        alignItems: 'center'
-    },
-    thumbnail: {
-        width: 300,
-        height: 300,
-        resizeMode: 'contain',
-    },
-    title: {
-
     },
     imageContainer: {
         width: '90%',
-        height: Dimensions.get('window').width / 2,
-        backgroundColor: '#eee',
-        marginTop: 10,
+        backgroundColor: '#ccc',
+        marginTop: 15
     },
     image: {
         width: '100%',
@@ -35,7 +17,17 @@ export default StyleSheet.create({
         height: Dimensions.get('window').width / 2,
         resizeMode: 'center',
     },
+    comment: { 
+        flexDirection: 'row', 
+        alignItems: 'center',
+        justifyContent: 'space-around', 
+        marginTop: 10,
+        maxWidth: '70%',
+        height: 100
+    },
     btnSubmit: {
+        position: 'absolute',
+        marginTop: 400,
         backgroundColor: '#35aaff',
         height: 45,
         width: '90%',
@@ -46,5 +38,10 @@ export default StyleSheet.create({
     textSubmit: {
         color: '#fff',
         fontSize: 18,
+    },
+    textRegister: {
+        color: '#35aaff',
+        fontSize: 18,
+        marginTop: 70,
     },
 })

@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
             <View style={styles.containerMap} >
                 <Map />
                 <View style={styles.addFurniture} >
-                    <TouchableOpacity onPress={() => { }} >
+                    <TouchableOpacity onPress={() => navigation.navigate('AddImage')} >
                         <AntDesign name="pluscircle" size={50} color="#5CFF57" />
                     </TouchableOpacity>
                 </View>

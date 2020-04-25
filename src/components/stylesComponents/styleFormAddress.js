@@ -14,7 +14,8 @@ export default StyleSheet.create({
     },
     piker: {
         backgroundColor: '#fff',
-        height: 50,
+        height: 45,
+        color: '#35aaff',
     },
     textArea: {
         backgroundColor: '#fff',

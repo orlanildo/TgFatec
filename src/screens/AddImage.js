@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Alert, Image, TextInput } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
+import { AntDesign } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons'
+import { Entypo } from '@expo/vector-icons'
 
 import styles from './styles/styleAddImage'
 
@@ -27,19 +30,32 @@ export default function AddImage({ navigation }) {
                 <Image style={styles.image} source={{ uri: selectedImage }} />
             </View>
 
-            <TextInput placeholder='Adicione um comentário para essa foto'
-                onChangeText={() => { }} style={styles.input} />
+            <View style={{ flexDirection: 'row', marginTop: 10, width: '60%', justifyContent: 'space-around' }} >
+                <TouchableOpacity onPress={openImagePickerAsync} >
+                    <Entypo name="folder-images" size={50} color="#5CFF57" />
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={openImagePickerAsync} >
-                <Text style={styles.textSubmit}>Pick a photo</Text>
-            </TouchableOpacity>
+                <TouchableOpacity onPress={() => { }} >
+                    <AntDesign name="camera" size={50} color="#5CFF57" />
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.comment} >
+                <TouchableOpacity style={{ marginLeft: -20, marginRight: 30 }} onPress={() => { }} >
+                    <MaterialIcons name="comment" size={35} color="#5CFF57" />
+                </TouchableOpacity>
+
+                <TextInput style={styles.input} multiline={true}
+                    placeholder='Adicione um comentário para esse movél'
+                    onChangeText={() => { }} />
+            </View>
 
             <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
-                <Text style={styles.buttomText}>Salvar</Text>
+                <Text style={styles.textSubmit}>Salvar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Home')} >
-                <Text style={styles.textSubmit}>Home</Text>
+            <TouchableOpacity style={styles.btnRegister}>
+                <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
             </TouchableOpacity>
         </View>
     )
