@@ -19,17 +19,10 @@ export default function Profile({ navigation }) {
                 Animated.timing(widthForm, { toValue: 365, duration: 400 }),
                 Animated.timing(heightForm, { toValue: 360, duration: 500 })
             ]).start()
-            setTimeout(() => {
-                setFinishLoadingForm(true)
-            }, 600)
-
-            console.log('if finishLoadingForm: ', finishLoadingForm)
-
+            
+            setTimeout(() => { setFinishLoadingForm(true) }, 600)
         } else {
-            console.log('\nelse toggleForm: ', toggleForm)
             setFinishLoadingForm(false)
-            console.log('else finishLoadingForm: ', finishLoadingForm)
-
             Animated.sequence([
                 Animated.timing(heightForm, { toValue: 2, duration: 300 }),
                 Animated.timing(widthForm, { toValue: 100, duration: 300 })

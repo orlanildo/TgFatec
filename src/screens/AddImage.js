@@ -6,18 +6,20 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { Entypo } from '@expo/vector-icons'
 
 import styles from './styles/styleAddImage'
+import Camera from '../components/Camera'
 
 
 export default function AddImage({ navigation }) {
     let [selectedImage, setSelectedImage] = useState()
+    let [openCamera, setOpenCamera] = useState(false)
 
-    let openImagePickerAsync = async () => {
+    const openImagePickerAsync = async () => {
         if (await ImagePicker.requestCameraRollPermissionsAsync() === false) {
             alert("Permission to access camera roll is required!")
             return
         }
 
-        let pickerResult = await ImagePicker.launchImageLibraryAsync()
+        const pickerResult = await ImagePicker.launchImageLibraryAsync()
 
         if (pickerResult.cancelled === true) return
 
@@ -25,38 +27,46 @@ export default function AddImage({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.imageContainer}>
-                <Image style={styles.image} source={{ uri: selectedImage }} />
-            </View>
+        <>
+            {openCamera == false ? (
+                <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <Image style={styles.image} source={{ uri: selectedImage }} />
+                    </View>
 
-            <View style={{ flexDirection: 'row', marginTop: 10, width: '60%', justifyContent: 'space-around' }} >
-                <TouchableOpacity onPress={openImagePickerAsync} >
-                    <Entypo name="folder-images" size={50} color="#5CFF57" />
-                </TouchableOpacity>
+                    <View style={{ flexDirection: 'row', marginTop: 10, width: '60%', justifyContent: 'space-around' }} >
+                        <TouchableOpacity onPress={openImagePickerAsync} >
+                            <Entypo name="folder-images" size={50} color="#5CFF57" />
+                        </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => { }} >
-                    <AntDesign name="camera" size={50} color="#5CFF57" />
-                </TouchableOpacity>
-            </View>
+                        <TouchableOpacity onPress={() => setOpenCamera(!openCamera)} >
+                            <AntDesign name="camera" size={50} color="#5CFF57" />
+                        </TouchableOpacity>
+                    </View>
 
-            <View style={styles.comment} >
-                <TouchableOpacity style={{ marginLeft: -20, marginRight: 30 }} onPress={() => { }} >
-                    <MaterialIcons name="comment" size={35} color="#5CFF57" />
-                </TouchableOpacity>
+                    <View style={styles.comment} >
+                        <TouchableOpacity style={{ marginLeft: -20, marginRight: 30 }} onPress={() => { }} >
+                            <MaterialIcons name="comment" size={35} color="#5CFF57" />
+                        </TouchableOpacity>
 
-                <TextInput style={styles.input} multiline={true}
-                    placeholder='Adicione um comentário para esse movél'
-                    onChangeText={() => { }} />
-            </View>
+                        <TextInput style={styles.input} multiline={true}
+                            placeholder='Adicione um comentário para esse movél'
+                            onChangeText={() => { }} />
+                    </View>
 
-            <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
-                <Text style={styles.textSubmit}>Salvar</Text>
-            </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
+                        <Text style={styles.textSubmit}>Salvar</Text>
+                    </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnRegister}>
-                <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
-            </TouchableOpacity>
-        </View>
+                    <TouchableOpacity style={styles.btnRegister}>
+                        <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
+                    </TouchableOpacity>
+                </View>
+
+                ) : (
+                <Camera />
+
+            )}
+        </>
     )
 }

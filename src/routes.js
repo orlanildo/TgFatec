@@ -42,8 +42,6 @@ function TabScreen() {
 function StackScree() {
 	return (
 		<Stack.Navigator screenOptions={{ header:() => <Header /> }} >
-			<Stack.Screen name="AuthScree" component={AuthScree} />
-
 			<Stack.Screen name="Home" component={Home} />
 			<Stack.Screen name="Profile" component={Profile} />
 			<Stack.Screen name="AddImage" component={AddImage} />
@@ -56,9 +54,9 @@ function DrawerScree() {
 		<Drawer.Navigator drawerContent={() => <DrawerContent />}>
 			{logado ? (
 				<Drawer.Screen name="AuthScree" component={AuthScree} />
-			) : (
-					<Drawer.Screen name="StackScree" component={StackScree} />
-				)}
+				) : (
+				<Drawer.Screen name="StackScree" component={StackScree} />
+			)}
 		</Drawer.Navigator>
 	)
 }
