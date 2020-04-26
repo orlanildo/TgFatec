@@ -5,27 +5,37 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
     },
     containerToggleFormAddress: {
         justifyContent: 'center',
         alignItems: 'center',
+        marginVertical: 10
     },
     containerBtn:{
-        marginTop: 20,
+        flexDirection: 'row',
+        marginTop: 5,
     },
     btnSubmit: {
         backgroundColor: '#35aaff',
         height: 45,
-        width: 370,
+        width: 170,
         borderRadius: 7,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     textSubmit: {
         color: '#fff',
         fontSize: 18,
     },
+    containerFurnitures: {
+        borderWidth: 1,
+        width: '90%',
+        height: 450,
+    },
+    photoCarousel: {
+        borderWidth: 2,
+        height: 320,
+    }
 
 })

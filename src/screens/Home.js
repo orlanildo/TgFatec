@@ -8,7 +8,7 @@ import Map from '../components/Map'
 
 
 export default function Home({ navigation }) {
-    const options = { email: 'teste@hotmail.com', secure: true }
+    const options = { email: 'test@hotmail.com', secure: true }
 
     return (
         <View style={styles.container}>

@@ -10,7 +10,9 @@ export default function Header({ navigation }) {
             <TouchableOpacity style={{ marginLeft: 5 }} onPress={() => Alert.alert('goBack')} >
                 <AntDesign name="arrowleft" size={45} color="black" />
             </TouchableOpacity>
+
             <Image source={require('../../assets/logoSmall.png')} />
+            
             <TouchableOpacity style={{ marginRight: 10 }} onPress={() => navigation.openDrawer()}>
                 <AntDesign name="menu-fold" size={45} color="black" />
             </TouchableOpacity>

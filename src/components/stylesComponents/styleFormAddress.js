@@ -24,8 +24,7 @@ export default StyleSheet.create({
         marginBottom: 15,
         fontSize: 18,
         borderRadius: 7,
-        paddingLeft: 7,
-        paddingTop: 7,
+        padding: 5,
         textAlignVertical: 'top',
     },
     input: {

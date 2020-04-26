@@ -12,7 +12,7 @@ import styles from './stylesComponents/styleMap'
 
 export default function Map({ navigation }) {
     const [currentRegion, setCurrentRegion] = useState(null)
-    const options = { email: 'teste@hotmail.com', secure: true }
+    const options = { email: 'test@hotmail.com', secure: true }
     const [users, setUsers] = useState([{
         _id: 1,
         name: 'teste',

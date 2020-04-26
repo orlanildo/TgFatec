@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, Animated } from 'react-native
 
 import styles from './styles/styleProfile'
 import FormAddress from '../components/FormAddress'
+import Furniture from '../components/Furniture'
 
 
 export default function Profile({ navigation }) {
@@ -19,7 +20,7 @@ export default function Profile({ navigation }) {
                 Animated.timing(widthForm, { toValue: 365, duration: 400 }),
                 Animated.timing(heightForm, { toValue: 360, duration: 500 })
             ]).start()
-            
+
             setTimeout(() => { setFinishLoadingForm(true) }, 600)
         } else {
             setFinishLoadingForm(false)
@@ -34,27 +35,34 @@ export default function Profile({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.containerToggleFormAddress}>
-
-                <TouchableOpacity style={styles.btnSubmit} onPress={opemFrom} >
+                <TouchableOpacity style={[styles.btnSubmit, { width: 270 }]} onPress={opemFrom} >
                     <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
                 </TouchableOpacity>
-                <Animated.View style={{ width: widthForm, 
-                    height: heightForm, backgroundColor: '#5CFF57', marginTop: 5 }}>
+                <Animated.View style={{ width: widthForm, height: heightForm, backgroundColor: '#5CFF57', marginTop: 5 }}>
                     {finishLoadingForm ? (
                         <FormAddress />
-                        ) : (
-                        null
-                    )}
+                    ) : (
+                            null
+                        )}
                 </Animated.View>
             </View>
+            
+            {/* Try to replace ScrollView with FlatList */}
+            <ScrollView style={{ marginLeft: 20 }} showsVerticalScrollIndicator={false} >
+                <Furniture />
+                <Furniture />
+                <Furniture />
+                <Furniture />
+                <Furniture />
+            </ScrollView>
 
             <View style={styles.containerBtn}>
-                <TouchableOpacity style={styles.btnSubmit}
+                <TouchableOpacity style={[styles.btnSubmit, { marginRight: 10 }]}
                     onPress={() => navigation.navigate('AddImage')} >
                     <Text style={styles.textSubmit}>AddImage</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={[styles.btnSubmit, { marginTop: 10 }]}
+                <TouchableOpacity style={styles.btnSubmit}
                     onPress={() => navigation.navigate('Login')} >
                     <Text style={styles.textSubmit}>Logout</Text>
                 </TouchableOpacity>
