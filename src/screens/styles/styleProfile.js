@@ -6,6 +6,8 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: '#5CFF57',
+
     },
     containerToggleFormAddress: {
         justifyContent: 'center',

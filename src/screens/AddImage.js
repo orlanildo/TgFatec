@@ -7,6 +7,7 @@ import { Entypo } from '@expo/vector-icons'
 
 import styles from './styles/styleAddImage'
 import Camera from '../components/Camera'
+import DateTime from '../components/DateTimePicker'
 
 
 export default function AddImage({ navigation }) {
@@ -34,39 +35,44 @@ export default function AddImage({ navigation }) {
                         <Image style={styles.image} source={{ uri: selectedImage }} />
                     </View>
 
-                    <View style={{ flexDirection: 'row', marginTop: 10, width: '60%', justifyContent: 'space-around' }} >
+                    <View style={styles.containerBtnAddImage} >
                         <TouchableOpacity onPress={openImagePickerAsync} >
-                            <Entypo name="folder-images" size={50} color="#5CFF57" />
+                            <Entypo name="folder-images" size={50} color="#35aaff" />
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => setOpenCamera(!openCamera)} >
-                            <AntDesign name="camera" size={50} color="#5CFF57" />
+                            <AntDesign name="camera" size={50} color="#35aaff" />
                         </TouchableOpacity>
                     </View>
 
-                    <View style={styles.comment} >
-                        <TouchableOpacity style={{ marginLeft: -20, marginRight: 30 }} onPress={() => { }} >
-                            <MaterialIcons name="comment" size={35} color="#5CFF57" />
-                        </TouchableOpacity>
+                    <View style={styles.formFurniture}>
+                        <TextInput style={styles.input} placeholder='Nome do móvél'
+                            onChangeText={() => { }} />
 
-                        <TextInput style={styles.input} multiline={true}
+                        <TextInput style={styles.inputComment} multiline={true}
                             placeholder='Adicione um comentário para esse movél'
                             onChangeText={() => { }} />
+
+                        <DateTime />
+
                     </View>
 
-                    <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
-                        <Text style={styles.textSubmit}>Salvar</Text>
-                    </TouchableOpacity>
+                    <View style={styles.containerBtnConclude}>
 
-                    <TouchableOpacity style={styles.btnRegister}>
-                        <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
+                            <Text style={styles.textSubmit}>Salvar</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.btnRegister}>
+                            <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
-                ) : (
-                <Camera />
+            ) : (
+                    <Camera />
 
-            )}
+                )}
         </>
     )
 }

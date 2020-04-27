@@ -9,8 +9,23 @@ export default StyleSheet.create({
         height: 450,
         marginBottom: 10,
     },
+    circleDiv: {
+        position: 'absolute',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        bottom: 5,
+
+    },
+    whiteCircle: {
+        width: 6,
+        height: 6,
+        borderRadius: 3,
+        margin: 5,
+        backgroundColor: '#fff',
+    },
     photoCarousel: {
         height: 310,
+        width: 333,
     },
     image: {
         width: '100%',
