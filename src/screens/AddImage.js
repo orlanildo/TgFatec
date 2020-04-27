@@ -7,7 +7,7 @@ import { Entypo } from '@expo/vector-icons'
 
 import styles from './styles/styleAddImage'
 import Camera from '../components/Camera'
-import DateTime from '../components/DateTimePicker'
+import FormFurniture from '../components/FormFurniture'
 
 
 export default function AddImage({ navigation }) {
@@ -45,20 +45,9 @@ export default function AddImage({ navigation }) {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={styles.formFurniture}>
-                        <TextInput style={styles.input} placeholder='Nome do móvél'
-                            onChangeText={() => { }} />
-
-                        <TextInput style={styles.inputComment} multiline={true}
-                            placeholder='Adicione um comentário para esse movél'
-                            onChangeText={() => { }} />
-
-                        <DateTime />
-
-                    </View>
+                    <FormFurniture />
 
                     <View style={styles.containerBtnConclude}>
-
                         <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
                             <Text style={styles.textSubmit}>Salvar</Text>
                         </TouchableOpacity>
@@ -72,7 +61,8 @@ export default function AddImage({ navigation }) {
             ) : (
                     <Camera />
 
-                )}
+                )
+            }
         </>
     )
 }

@@ -12,21 +12,13 @@ export default function Home({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.containerAvatar}>
-                <Gravatar options={options} style={styles.avatar} />
-                <View style={{ marginLeft: -200 }}>
-                    <Text style={styles.email}>Teste First</Text>
-                    <Text style={styles.nickname}>teste@hotmail.com</Text>
-                </View>
-            </View>
-
             <Text style={{ marginTop: 20 }} >Escolha algume no mapa que precise de uma coleta</Text>
 
             <View style={styles.containerMap} >
                 <Map />
                 <View style={styles.addFurniture} >
                     <TouchableOpacity onPress={() => navigation.navigate('AddImage')} >
-                        <AntDesign name="pluscircle" size={50} color="#5CFF57" />
+                        <AntDesign name="pluscircle" size={50} color="#35aaff" />
                     </TouchableOpacity>
                 </View>
             </View>

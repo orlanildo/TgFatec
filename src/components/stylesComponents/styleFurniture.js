@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     containerFurnitures: {
-        borderColor: '#5CFF57',
+        borderColor: '#98ff98',
         borderWidth: 1,
         width: '95%',
         height: 450,

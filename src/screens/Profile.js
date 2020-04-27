@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Animated } from 'react-native'
+import { Gravatar } from 'react-native-gravatar'
 
 import styles from './styles/styleProfile'
 import FormAddress from '../components/FormAddress'
@@ -7,6 +8,8 @@ import Furniture from '../components/Furniture'
 
 
 export default function Profile({ navigation }) {
+    const options = { email: 'test@hotmail.com', secure: true }
+
     //const [start, setStart] = useState(false)
     const [finishLoadingForm, setFinishLoadingForm] = useState(false)
     const [toggleForm, setToggleForm] = useState(false)
@@ -34,11 +37,19 @@ export default function Profile({ navigation }) {
 
     return (
         <View style={styles.container}>
+            <View style={styles.containerAvatar}>
+                <Gravatar options={options} style={styles.avatar} />
+                <View style={{ marginLeft: -200 }}>
+                    <Text style={styles.email}>Teste First</Text>
+                    <Text style={styles.nickname}>teste@hotmail.com</Text>
+                </View>
+            </View>
+
             <View style={styles.containerToggleFormAddress}>
                 <TouchableOpacity style={[styles.btnSubmit, { width: 270 }]} onPress={opemFrom} >
                     <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
                 </TouchableOpacity>
-                <Animated.View style={{ width: widthForm, height: heightForm, backgroundColor: '#5CFF57', marginTop: 5 }}>
+                <Animated.View style={{ width: widthForm, height: heightForm, backgroundColor: '#98ff98', marginTop: 5 }}>
                     {finishLoadingForm ? (
                         <FormAddress />
                     ) : (
@@ -46,7 +57,7 @@ export default function Profile({ navigation }) {
                         )}
                 </Animated.View>
             </View>
-            
+
             {/* Try to replace ScrollView with FlatList */}
             <ScrollView style={{ marginLeft: 20 }} showsVerticalScrollIndicator={false} >
                 <Furniture />

@@ -69,7 +69,7 @@ export default function Map({ navigation }) {
                     </MapView>
 
                     <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
-                        <MaterialIcons name="my-location" size={40} color='#5CFF57' />
+                        <MaterialIcons name="my-location" size={40} color='#35aaff' />
                     </TouchableOpacity>
                 </>
             )}

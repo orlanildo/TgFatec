@@ -43,7 +43,7 @@ export default function ComponentCamera() {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.click} onPress={takePickture}>
-                        <MaterialCommunityIcons name="camera-iris" size={45} color="#5CFF57" />
+                        <MaterialCommunityIcons name="camera-iris" size={45} color="#98ff98" />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.back} onPress={() => {} } >

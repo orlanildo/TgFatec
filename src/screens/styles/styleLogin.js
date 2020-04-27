@@ -5,7 +5,7 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#5CFF57'
+        backgroundColor: '#98ff98'
     },
     containerLogoMidium: {
         marginTop: 80,

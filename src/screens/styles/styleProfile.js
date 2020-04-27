@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#5CFF57',
+        backgroundColor: '#98ff98',
 
     },
     containerToggleFormAddress: {
@@ -17,6 +17,7 @@ export default StyleSheet.create({
     containerBtn:{
         flexDirection: 'row',
         marginTop: 5,
+        marginBottom: 10,
     },
     btnSubmit: {
         backgroundColor: '#35aaff',
