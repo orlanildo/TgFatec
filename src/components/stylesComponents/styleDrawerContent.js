@@ -4,13 +4,11 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        
+        backgroundColor: '#dcdcdc'
     },
     btnSubmit: {
         marginLeft: 25,
-        marginTop: 40,
+        marginTop: 30,
     },
     textSubmit: {
         fontSize: 18,

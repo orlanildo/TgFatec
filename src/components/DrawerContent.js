@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 
-import styles from './stylesComponents/styleMenu'
+import styles from './stylesComponents/styleDrawerContent'
 
 
 export default function DrawerContent({ navigation }) {
@@ -11,8 +11,8 @@ export default function DrawerContent({ navigation }) {
 	}
 
 	return (
-		<View >
-			<TouchableOpacity style={[styles.btnSubmit, { marginTop: 80 }]} onPress={testeNavigarion} >
+		<View style={styles.container} >
+			<TouchableOpacity style={[styles.btnSubmit, { marginTop: 40 }]} onPress={testeNavigarion} >
 				<Text style={styles.textSubmit}>Home</Text>
 			</TouchableOpacity>
 
