@@ -8,7 +8,7 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import Home from './screens/Home'
 import Profile from './screens/Profile'
-import AddImage from './screens/AddImage'
+import AddFurniture from './screens/AddFurniture'
 
 import DrawerContent from './components/Menu'
 import Header from './components/Header'
@@ -34,7 +34,7 @@ function TabScreen() {
 		<Tab.navigator>
 			<Tab.Screen name="Home" component={Home} />
 			<Tab.Screen name="Profile" component={Profile} />
-			<Tab.Screen name="AddImage" component={AddImage} />
+			<Tab.Screen name="AddFurniture" component={AddFurniture} />
 		</Tab.navigator>
 	)
 }
@@ -44,7 +44,7 @@ function StackScree() {
 		<Stack.Navigator screenOptions={{ header:() => <Header /> }} >
 			<Stack.Screen name="Home" component={Home} />
 			<Stack.Screen name="Profile" component={Profile} />
-			<Stack.Screen name="AddImage" component={AddImage} />
+			<Stack.Screen name="AddFurniture" component={AddFurniture} />
 		</Stack.Navigator >
 	)
 }

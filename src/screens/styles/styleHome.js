@@ -8,24 +8,6 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#98ff98',
     },
-    containerAvatar: {
-        flexDirection: 'row',
-        width: '100%',
-        height: 100,
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
-    avatar: {
-        marginLeft: -90,
-        width: 80,
-        height: 80,
-        borderRadius: 75,
-    },
-    furniture: {
-        fontWeight: 'bold',
-        marginTop: 3,
-        fontSize: 12,
-    },
     containerMap: {
         flex: 2,
         width: '90%',
@@ -38,13 +20,6 @@ export default StyleSheet.create({
         right: 5,
         bottom: 5,
         zIndex: 9,
-    },
-    nickname: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    email: {
-        fontSize: 15,
     },
     btnSubmit: {
         backgroundColor: '#35aaff',

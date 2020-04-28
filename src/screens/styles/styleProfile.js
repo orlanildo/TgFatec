@@ -7,12 +7,31 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: '#98ff98',
-
+    },
+    containerAvatar: {
+        flexDirection: 'row',
+        width: '90%',
+        height: 100,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+    },
+    avatar: {
+        marginLeft: -10,
+        width: 80,
+        height: 80,
+        borderRadius: 75,
+    },
+    nickname: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    email: {
+        fontSize: 15,
     },
     containerToggleFormAddress: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10
+        marginVertical: 5
     },
     containerBtn:{
         flexDirection: 'row',
@@ -29,7 +48,18 @@ export default StyleSheet.create({
     },
     textSubmit: {
         color: '#fff',
-        fontSize: 18,
+        fontSize: 17 ,
+    },
+    containerMsgRemoval: {
+        alignItems: 'center',
+        borderRadius: 7,
+        backgroundColor: '#fff',
+        width: '90%',
+        paddingHorizontal: 20,
+        paddingVertical: 5,
+    },
+    textRemoval: {
+        fontSize: 17,
     },
     containerFurnitures: {
         borderWidth: 1,

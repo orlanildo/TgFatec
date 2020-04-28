@@ -12,6 +12,7 @@ export default function Profile({ navigation }) {
 
     //const [start, setStart] = useState(false)
     const [finishLoadingForm, setFinishLoadingForm] = useState(false)
+    const [user, setUser] = useState(true)
     const [toggleForm, setToggleForm] = useState(false)
     const [heightForm, setHeightForm] = useState(new Animated.Value(2))
     const [widthForm, setWidthForm] = useState(new Animated.Value(100))
@@ -21,7 +22,7 @@ export default function Profile({ navigation }) {
             console.log('if toggleForm: ', toggleForm)
             Animated.sequence([
                 Animated.timing(widthForm, { toValue: 365, duration: 400 }),
-                Animated.timing(heightForm, { toValue: 360, duration: 500 })
+                Animated.timing(heightForm, { toValue: 310, duration: 500 })
             ]).start()
 
             setTimeout(() => { setFinishLoadingForm(true) }, 600)
@@ -37,19 +38,29 @@ export default function Profile({ navigation }) {
 
     return (
         <View style={styles.container}>
+
             <View style={styles.containerAvatar}>
                 <Gravatar options={options} style={styles.avatar} />
-                <View style={{ marginLeft: -200 }}>
+                <View style={{ marginLeft: -80 }}>
                     <Text style={styles.email}>Teste First</Text>
                     <Text style={styles.nickname}>teste@hotmail.com</Text>
                 </View>
             </View>
 
             <View style={styles.containerToggleFormAddress}>
-                <TouchableOpacity style={[styles.btnSubmit, { width: 270 }]} onPress={opemFrom} >
-                    <Text style={styles.textSubmit}>Cadastrar / Atualizar Endereço</Text>
-                </TouchableOpacity>
-                <Animated.View style={{ width: widthForm, height: heightForm, backgroundColor: '#98ff98', marginTop: 5 }}>
+                {user ? (
+                    <TouchableOpacity style={[styles.btnSubmit, { width: 270 }]} onPress={opemFrom} >
+                        <Text style={styles.textSubmit}>Atualizar Endereço</Text>
+                    </TouchableOpacity>
+                    ) : (
+                    <View style={styles.containerMsgRemoval}>
+                        <Text style={styles.textRemoval} >Click na descrição de um Movél</Text>
+                        <Text style={styles.textRemoval} >para confirmar (via WhatSap) a retirada</Text>
+                    </View>
+                )}
+
+
+                <Animated.View style={{ width: widthForm, height: heightForm }}>
                     {finishLoadingForm ? (
                         <FormAddress />
                     ) : (
@@ -58,8 +69,7 @@ export default function Profile({ navigation }) {
                 </Animated.View>
             </View>
 
-            {/* Try to replace ScrollView with FlatList */}
-            <ScrollView style={{ marginLeft: 20 }} showsVerticalScrollIndicator={false} >
+            <ScrollView style={{ marginHorizontal: 10 }} showsVerticalScrollIndicator={false} >
                 <Furniture />
                 <Furniture />
                 <Furniture />
@@ -69,8 +79,8 @@ export default function Profile({ navigation }) {
 
             <View style={styles.containerBtn}>
                 <TouchableOpacity style={[styles.btnSubmit, { marginRight: 10 }]}
-                    onPress={() => navigation.navigate('AddImage')} >
-                    <Text style={styles.textSubmit}>AddImage</Text>
+                    onPress={() => navigation.navigate('AddFurniture')} >
+                    <Text style={styles.textSubmit}>AddFurniture</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btnSubmit}

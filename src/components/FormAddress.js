@@ -12,7 +12,7 @@ export default function FormAddress({ navigation }) {
     return (
         <View style={styles.container} >
             <View style={styles.containerPiker}>
-                <Picker mode='dropdown' selectedValue={selectedState} style={[styles.piker, { width: '20%' }]}
+                <Picker mode='dropdown' selectedValue={selectedState} style={[styles.piker, { width: '21%' }]}
                     onValueChange={(itemValue) => setselectedState(itemValue)} >
                     <Picker.Item label="SP" value="SP" />
                     <Picker.Item label="RJ" value="RJ" />
@@ -35,10 +35,10 @@ export default function FormAddress({ navigation }) {
                 onChangeText={() => { }} />
 
             <View style={{ flexDirection: 'row' }}>
-                <TextInput style={[styles.input, { marginRight: 4, width: '19%' }]}
+                <TextInput style={[styles.input, { marginRight: 3, width: '19%' }]}
                     placeholder='Nº' autoCorrect={false}
                     onChangeText={() => { }} />
-                <TextInput style={[styles.input, { marginLeft: 4, width: '69%' }]}
+                <TextInput style={[styles.input, { marginLeft: 3, width: '69%' }]}
                     placeholder='Rua:' autoCorrect={false}
                     onChangeText={() => { }} />
             </View>

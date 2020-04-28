@@ -15,7 +15,7 @@ export default StyleSheet.create({
         borderRadius: 7,
         borderColor: '#35aaff',
     },
-    containerBtnAddImage: { 
+    containerBtnAddFurniture: { 
         flexDirection: 'row', 
         margin: 10, 
         width: '60%', 

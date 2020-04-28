@@ -2,15 +2,16 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     container: {
-        marginTop: 10,
+        marginTop: 5,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor : '#98ff98',
     },
     containerPiker: {
         width: '90%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 10,
+        marginBottom: 5,
     },
     piker: {
         backgroundColor: '#fff',
@@ -21,7 +22,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
         width: '90%',
         height: 100,
-        marginBottom: 15,
+        marginBottom: 5,
         fontSize: 18,
         borderRadius: 7,
         padding: 5,
@@ -30,7 +31,7 @@ export default StyleSheet.create({
     input: {
         backgroundColor: '#fff',
         width: '90%',
-        marginBottom: 15,
+        marginBottom: 5,
         fontSize: 18,
         borderRadius: 7,
         paddingLeft: 7,
@@ -46,12 +47,7 @@ export default StyleSheet.create({
     },
     textSubmit: {
         color: '#fff',
-        fontSize: 18,
-    },
-    textLogin: {
-        color: '#35aaff',
-        fontSize: 18,
-    },
-    
+        fontSize: 17,
+    },   
 
 })

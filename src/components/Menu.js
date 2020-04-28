@@ -13,7 +13,11 @@ export default function DrawerContent({ navigation }) {
 	return (
 		<View >
 			<TouchableOpacity style={[styles.btnSubmit, { marginTop: 80 }]} onPress={testeNavigarion} >
-				<Text style={styles.textSubmit}>AddImage</Text>
+				<Text style={styles.textSubmit}>Home</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.btnSubmit} onPress={testeNavigarion} >
+				<Text style={styles.textSubmit}>AddFurniture</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity style={styles.btnSubmit} onPress={testeNavigarion} >

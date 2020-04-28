@@ -28,7 +28,7 @@ export default function Furniture() {
             <View style={styles.containerScroll}>
                 <ScrollView horizontal pagingEnabled >
                     {images.map(img => (
-                        <Image key={img} source={{ uri: img }} style={{ width: 335, height: 310 }} />
+                        <Image key={img} source={{ uri: img }} style={{width: 371, height: 312}} />
                     ))}
                 </ScrollView>
 
@@ -39,16 +39,18 @@ export default function Furniture() {
                 </View>
             </View>
 
-            <View style={styles.containerDescFurniture}>
-                <Text style={styles.nameFurniture}>Nome do Movél</Text>
-                <Text style={styles.decFurniture} >{decFurniture}</Text>
-                <Text style={styles.addressFurniture} >Endereço:
+            <TouchableOpacity onPress={() => {}}>
+                <View style={styles.containerDescFurniture}>
+                    <Text style={styles.nameFurniture}>Nome do Movél</Text>
+                    <Text style={styles.descFurniture} >{decFurniture}</Text>
+                    <Text style={styles.addressFurniture} >Endereço:
                     <Text style={{ fontWeight: 'normal' }} > {address}</Text>
-                </Text>
-                <Text style={styles.removeTime}>Retirada:
+                    </Text>
+                    <Text style={styles.removeTime}>Retirada:
                     <Text style={{ fontWeight: 'normal' }} > {removeTime}</Text>
-                </Text>
-            </View>
+                    </Text>
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }

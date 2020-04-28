@@ -5,12 +5,12 @@ import { AntDesign } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
 import { Entypo } from '@expo/vector-icons'
 
-import styles from './styles/styleAddImage'
+import styles from './styles/styleAddFurniture'
 import Camera from '../components/Camera'
 import FormFurniture from '../components/FormFurniture'
 
 
-export default function AddImage({ navigation }) {
+export default function AddFurniture({ navigation }) {
     let [selectedImage, setSelectedImage] = useState()
     let [openCamera, setOpenCamera] = useState(false)
 
@@ -35,7 +35,7 @@ export default function AddImage({ navigation }) {
                         <Image style={styles.image} source={{ uri: selectedImage }} />
                     </View>
 
-                    <View style={styles.containerBtnAddImage} >
+                    <View style={styles.containerBtnAddFurniture} >
                         <TouchableOpacity onPress={openImagePickerAsync} >
                             <Entypo name="folder-images" size={50} color="#35aaff" />
                         </TouchableOpacity>
