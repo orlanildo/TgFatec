@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 100,
+  "expoServerNgrokUrl": "https://6f-dvw.anonymous.tgfatec.exp.direct",
+  "packagerNgrokUrl": "https://packager.6f-dvw.anonymous.tgfatec.exp.direct",
+  "ngrokPid": 6548,
+  "webpackServerPort": null
+}

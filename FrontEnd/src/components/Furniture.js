@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, ScrollView, Image, TouchableOpacity, Alert } from 'react-native'
+import { useNavigation  } from '@react-navigation/native'
 
 import styles from './stylesComponents/styleFurniture'
 
 export default function Furniture() {
+    const navigation = useNavigation()
+
     const [address, setAddress] = useState('Rua: monte Carmelo Nº 92 Conceição Osasco - SP Cep: 1234-567')
     const [removeTime, setRemoveTime] = useState('17:00 às 18:00 de segunda a sexta')
     const [decFurniture, setdecFurniture] = useState('Is simply dummy text of the printing and typesetting'
@@ -39,7 +42,7 @@ export default function Furniture() {
                 </View>
             </View>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('AddFurniture')} >
                 <View style={styles.containerDescFurniture}>
                     <Text style={styles.nameFurniture}>Nome do Movél</Text>
                     <Text style={styles.descFurniture} >{decFurniture}</Text>

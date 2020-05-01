@@ -8,6 +8,8 @@ mongoose.set('useCreateIndex', true);
 const UserSchema = new mongoose.Schema({
     name: String,
     email: String,
+    address: String,
+    cellPhone: String,
     location: {
         type:  PointSchema,
         index: '2dsphere'

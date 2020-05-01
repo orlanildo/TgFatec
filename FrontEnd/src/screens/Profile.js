@@ -76,18 +76,6 @@ export default function Profile({ navigation }) {
                 <Furniture />
                 <Furniture />
             </ScrollView>
-
-            <View style={styles.containerBtn}>
-                <TouchableOpacity style={[styles.btnSubmit, { marginRight: 10 }]}
-                    onPress={() => navigation.navigate('AddFurniture')} >
-                    <Text style={styles.textSubmit}>AddFurniture</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.btnSubmit}
-                    onPress={() => navigation.navigate('Login')} >
-                    <Text style={styles.textSubmit}>Logout</Text>
-                </TouchableOpacity>
-            </View>
         </View>
     )
 }

@@ -4,47 +4,45 @@ module.exports = {
     async index(req, res) {
         const user = await User.find()
 
-        return res.status(200).json(user)
+        return res.json(user)
     },
 
     async create(req, res) {
-        const { name, email, latitude, longitude } = req.body
+        const { name, email, latitude, longitude, cellPhone, address } = req.body
 
-        let user = await User.findOne({ email })
+        //let user = await User.findOne({ email })
 
-        if(!user){
-            const location = {
-                type: 'Point',
-                coordinates: [longitude, latitude],
-            }
-    
-            user = await User.create({
-                name,
-                email,
-                location
-            })
-            return res.status(200).json(user)
-        }else{
-            return res.status(500).json({ msg: 'Usuario já existente!' })
+        const location = {
+            type: 'Point',
+            coordinates: [longitude, latitude],
         }
 
+        let user = await User.create({
+            name,
+            email,
+            cellPhone,
+            address,
+            location,
+        })
+
+        return res.send(user)
     },
 
     async update(req, res) {
-        const { id, name, email } = req.body
-
-        const user = await User.findOneAndUpdate(id, {
+        const { name, email, cellPhone, address } = req.body 
+        const user = await User.findByIdAndUpdate(req.params.id, {
             name,
             email,
+            cellPhone,
+            address
         })
 
-        console.log(user)
-
-        return res.status(200).json({ user })
-
+        return res.send(user)
     },
 
     async destroy(req, res) {
+        await User.findByIdAndDelete(req.params.id)
 
+        return res.send()
     }
 }

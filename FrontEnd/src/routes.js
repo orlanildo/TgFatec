@@ -16,7 +16,7 @@ const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
 const AuthContext = React.createContext();
-const logado = true
+const logado = false
 
 
 function DrawerScree() {

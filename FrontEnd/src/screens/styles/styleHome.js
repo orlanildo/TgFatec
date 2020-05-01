@@ -8,10 +8,22 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#98ff98',
     },
+    containerTipMap: {
+        backgroundColor: '#fff',
+        width: '90%',
+        borderRadius: 7,
+        marginVertical: 5,
+        padding: 5,
+        alignItems: 'center'
+    },
+    tipMap: {
+        fontSize: 17,
+        color: '#35aaff'
+    },
     containerMap: {
         flex: 2,
         width: '90%',
-        height: 400,
+        marginBottom: 10,
     },
     addFurniture: {
         position: 'absolute',
@@ -20,17 +32,5 @@ export default StyleSheet.create({
         right: 5,
         bottom: 5,
         zIndex: 9,
-    },
-    btnSubmit: {
-        backgroundColor: '#35aaff',
-        height: 45,
-        width: '90%',
-        borderRadius: 7,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    textSubmit: {
-        color: '#fff',
-        fontSize: 18,
     },
 })

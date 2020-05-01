@@ -9,8 +9,8 @@ routes
 
     .get('/users', UserController.index)
     .post('/users', UserController.create)
-    .put('/users', UserController.update)
-    .delete('/users', UserController.destroy)
+    .put('/users/:id', UserController.update)
+    .delete('/users/:id', UserController.destroy)
 
 
 module.exports = routes

@@ -18,7 +18,9 @@ export default function Header() {
                 <AntDesign name="arrowleft" size={45} color="#35aaff" />
             </TouchableOpacity>
 
-            <Image source={require('../../assets/logoSmallBlu.png')} />
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <Image source={require('../../assets/logoSmallBlu.png')} />
+            </TouchableOpacity>
             
             <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
                 <AntDesign name="menu-fold" size={45} color="#35aaff" />

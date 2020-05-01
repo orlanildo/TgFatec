@@ -48,12 +48,12 @@ export default function AddFurniture({ navigation }) {
                     <FormFurniture />
 
                     <View style={styles.containerBtnConclude}>
-                        <TouchableOpacity style={styles.btnSubmit} onPress={() => { }} >
+                        <TouchableOpacity style={styles.btnSubmit} onPress={() => navigation.navigate('Profile')} >
                             <Text style={styles.textSubmit}>Salvar</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.btnRegister}>
-                            <Text style={styles.textRegister} onPress={() => navigation.navigate('Home')} >Cancelar</Text>
+                            <Text style={styles.textRegister} onPress={() => navigation.goBack()} >Cancelar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
