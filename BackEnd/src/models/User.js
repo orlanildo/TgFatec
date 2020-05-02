@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 const PointSchema = require('./utils/PointSchema')
 
-// Ver a nova maneira de armazenar uma location no mongo
-// e retirar esse useCreateIndex
-mongoose.set('useCreateIndex', true);
 
 const UserSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    address: String,
-    cellPhone: String,
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    cellPhone: { type: String, required: true },
+    address: {
+        type: mongoose.ObjectId,
+        ref: 'Address'
+    },
     location: {
         type:  PointSchema,
         index: '2dsphere'
