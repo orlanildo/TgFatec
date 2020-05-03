@@ -14,6 +14,7 @@ routes
     .delete('/users/:id', UserController.destroy)
 
     .get('/address', Address.index)
+    .get('/address/:id', Address.indexPopulateUser)
     .post('/address', Address.create)
     .put('/address/:id', Address.update)
     .delete('/address/:id', Address.destroy)
