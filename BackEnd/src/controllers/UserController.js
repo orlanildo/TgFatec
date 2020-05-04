@@ -17,7 +17,7 @@ module.exports = {
     },
 
     async create(req, res) {
-        const { name, email, latitude, longitude, cellPhone, address } = req.body
+        const { name, email, latitude, longitude, cellPhone, addressId, furnitureId } = req.body
 
         //let user = await User.findOne({ email })
 
@@ -30,7 +30,8 @@ module.exports = {
             name,
             email,
             cellPhone,
-            address,
+            addressId,
+            furnitureId,
             location,
         })
 
@@ -38,20 +39,25 @@ module.exports = {
     },
 
     async update(req, res) {
-        const { name, email, cellPhone, address } = req.body 
+        const { name, email, cellPhone, addressId, furnitureId, location } = req.body 
         const user = await User.findByIdAndUpdate(req.params.id, {
             name,
             email,
             cellPhone,
-            address
-        })
+            addressId,
+            furnitureId,
+            location,
+        }, { new: true })
 
         return res.send(user)
     },
 
     async destroy(req, res) {
-        await User.findByIdAndDelete(req.params.id)
-
-        return res.send()
+        try {
+            await User.findByIdAndDelete(req.params.id)
+            return res.send()
+        } catch (error) {
+            return res.status(404).json({ error, msg: 'Erro ao excluir um Usuário' })
+        }
     }
 }

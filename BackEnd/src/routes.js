@@ -1,7 +1,8 @@
 const { Router } = require('express')
 const UserController = require('./controllers/UserController')
 const SearchController = require('./controllers/SearchController')
-const Address = require('./controllers/AddressController')
+const AddressController = require('./controllers/AddressController')
+const FurnitureController = require('./controllers/FurnitureController')
 
 const routes = Router()
 
@@ -13,11 +14,17 @@ routes
     .put('/users/:id', UserController.update)
     .delete('/users/:id', UserController.destroy)
 
-    .get('/address', Address.index)
-    .get('/address/:id', Address.indexPopulateUser)
-    .post('/address', Address.create)
-    .put('/address/:id', Address.update)
-    .delete('/address/:id', Address.destroy)
+    .get('/address', AddressController.index)
+    .get('/address/:id', AddressController.indexPopulateUser)
+    .post('/address', AddressController.create)
+    .put('/address/:id', AddressController.update)
+    .delete('/address/:id', AddressController.destroy)
+    
+    .get('/furniture', FurnitureController.index)
+    .get('/furniture/:id', FurnitureController.indexPopulateAddress)
+    .post('/furniture', FurnitureController.create)
+    .put('/furniture/:id', FurnitureController.update)
+    .delete('/furniture/:id', FurnitureController.destroy)
 
 
 module.exports = routes
