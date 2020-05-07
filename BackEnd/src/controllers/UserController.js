@@ -2,54 +2,40 @@ const User = require('../models/User')
 
 module.exports = {
     async index(req, res) {
-        const user = await User.find()
+        const findAllUsers = await User.find()
 
-        return res.json(user)
+        return res.json(findAllUsers)
     },
 
     async indexFindOne(req, res){
-        //5eac988c766f4e3488516762
-        const test = await User.findOne({ _id: '5eae3c57dcf8df1d88a777b1' }).populate('Address')
+        const findUser = await User.findOne({ _id: req.params.id }).populate('Furniture')
         
-        console.log(test)
-
-        return res.send()
+        return res.json(findUser)
     },
 
     async create(req, res) {
-        const { name, email, latitude, longitude, cellPhone, addressId, furnitureId } = req.body
+        const { name, email, cellPhone, password, latitude, longitude } = req.body
 
-        //let user = await User.findOne({ email })
+        const address = { zipCode, number, street, neighborhood, city, state } = req.body
 
-        const location = {
-            type: 'Point',
-            coordinates: [longitude, latitude],
-        }
+        const location = { type: 'Point', coordinates: [longitude, latitude] }
 
-        let user = await User.create({
-            name,
-            email,
-            cellPhone,
-            addressId,
-            furnitureId,
-            location,
-        })
+        const newUser = await User.create({ name, email, cellPhone, password, location, address })
 
-        return res.send(user)
+        return res.json(newUser)
     },
 
     async update(req, res) {
-        const { name, email, cellPhone, addressId, furnitureId, location } = req.body 
-        const user = await User.findByIdAndUpdate(req.params.id, {
-            name,
-            email,
-            cellPhone,
-            addressId,
-            furnitureId,
-            location,
-        }, { new: true })
+        const { name, email, cellPhone, password, latitude, longitude } = req.body
 
-        return res.send(user)
+        const address = { zipCode, number, street, neighborhood, city, state } = req.body
+
+        const location = { type: 'Point', coordinates: [longitude, latitude] }
+
+        const updateUser = await User.findByIdAndUpdate(req.params.id, {
+            name, email, cellPhone, password, location, $push: { address } }, { new: true })
+
+        return res.json(updateUser)
     },
 
     async destroy(req, res) {

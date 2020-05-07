@@ -1,17 +1,19 @@
 const mongoose = require('mongoose')
+const AddressSchema = require('./utils/AddressSchema')
 
 
 const FurnitureSchema = new mongoose.Schema({
-    pathImgs: [String],
-    name: String,
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    address: { type: AddressSchema, required: true },
+
+    pathImgs: [{ type: String}],
+    name: { type: String, required: true },
+    daysWeek: [{ type: Number, required: true }],
     description: String,
-    dateWeek: [Number],
     dateStart: String,
     dateFinal: String,
     timeStart: String,
-    timeFinal: String,
-
-    userId: { type: String, required: true },
+    timeFinal: String
 })
 
 module.exports = mongoose.model('Furniture', FurnitureSchema)
