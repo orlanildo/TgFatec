@@ -5,8 +5,11 @@ const FurnitureController = require('./controllers/FurnitureController')
 
 const routes = Router()
 
+
 routes
     .get('/search', SearchController.index)
+
+    .get('/users/login', UserController.login)
 
     .get('/users', UserController.index)
     .get('/users/:id', UserController.indexFindOne)
